@@ -50,7 +50,7 @@ class BTTableCellContentView: UIView {
         // Set separator color of dropdown menu based on barStyle
         context?.setStrokeColor(self.separatorColor.cgColor)
         context?.setLineWidth(1)
-        context?.move(to: CGPoint(x: 0, y: self.bounds.size.height))
+        context?.move(to: CGPoint(x: 5, y: self.bounds.size.height))
         context?.addLine(to: CGPoint(x: self.bounds.size.width, y: self.bounds.size.height))
         context?.strokePath()
     }

@@ -28,7 +28,6 @@ final class BTConfiguration {
     var cellHeight: CGFloat!
     var cellBackgroundColor: UIColor?
     var cellSeparatorColor: UIColor?
-    var cellSeparatorStyle: UITableViewCellSeparatorStyle?
     var cellTextLabelColor: UIColor?
     var selectedCellTextLabelColor: UIColor?
     var cellTextLabelFont: UIFont!
@@ -63,7 +62,6 @@ final class BTConfiguration {
         self.cellBackgroundColor = UIColor.white
         self.arrowTintColor = UIColor.white
         self.cellSeparatorColor = UIColor.darkGray
-        self.cellSeparatorStyle = UITableViewCellSeparatorStyle.none
         self.cellTextLabelColor = UIColor.darkGray
         self.selectedCellTextLabelColor = UIColor.darkGray
         self.cellTextLabelFont = UIFont(name: "HelveticaNeue-Bold", size: 17)
