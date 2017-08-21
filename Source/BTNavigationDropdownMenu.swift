@@ -414,12 +414,28 @@ open class BTNavigationDropdownMenu: UIView {
     }
 
     open func setSelected(index: Int) {
-        self.tableView.selectedIndexPath = index
+        guard let _ = self.tableView.selectedIndexPath?.index(of: index) else {return}
+        self.tableView.selectedIndexPath?.append(index)//self.tableView.selectedIndexPath = index
         self.tableView.reloadData()
 
         if self.shouldChangeTitleText! {
             self.setMenuTitle("\(self.tableView.items[index])")
         }
+    }
+    
+    open func setDeselected(index: Int) {
+        if let indexOfElement = self.tableView.selectedIndexPath?.index(of: index) {
+            self.tableView.selectedIndexPath?.remove(at: indexOfElement)
+        }
+        self.tableView.reloadData()
+        
+        if self.shouldChangeTitleText! {
+            self.setMenuTitle("\(self.tableView.items[index])")
+        }
+    }
+    
+    open func selectedItems() -> [Int]? {
+        return self.tableView.selectedIndexPath
     }
 
     func setupDefaultConfiguration() {
@@ -441,7 +457,7 @@ open class BTNavigationDropdownMenu: UIView {
         headerView.backgroundColor = self.configuration.cellBackgroundColor
         self.tableView.tableHeaderView = headerView
 
-        self.topSeparator.backgroundColor = self.configuration.cellSeparatorColor
+        self.topSeparator.backgroundColor = self.configuration.cellBackgroundColor//.cellSeparatorColor
 
         // Rotate arrow
         self.rotateArrow()

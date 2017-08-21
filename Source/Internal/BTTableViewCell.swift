@@ -24,7 +24,8 @@
 import UIKit
 
 class BTTableViewCell: UITableViewCell {
-    let checkmarkIconWidth: CGFloat = 50
+    let checkmarkIconWidth: CGFloat = 14
+    let checkmarkIconHeight: CGFloat = 10
     let horizontalMargin: CGFloat = 20
     
     var checkmarkIcon: UIImageView!
@@ -53,9 +54,9 @@ class BTTableViewCell: UITableViewCell {
         
         // Checkmark icon
         if self.textLabel!.textAlignment == .center {
-            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth, y: (cellContentFrame.height - 30)/2, width: 30, height: 30))
+            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth - 10, y: (cellContentFrame.height - checkmarkIconHeight)/2, width: checkmarkIconWidth, height: checkmarkIconHeight))
         } else if self.textLabel!.textAlignment == .left {
-            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth, y: (cellContentFrame.height - 30)/2, width: 30, height: 30))
+            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth - 10, y: (cellContentFrame.height - checkmarkIconHeight)/2, width: checkmarkIconWidth, height: checkmarkIconHeight))
         } else {
             self.checkmarkIcon = UIImageView(frame: CGRect(x: horizontalMargin, y: (cellContentFrame.height - 30)/2, width: 30, height: 30))
         }

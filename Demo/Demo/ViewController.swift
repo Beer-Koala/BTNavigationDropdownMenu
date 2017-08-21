@@ -40,6 +40,8 @@ class ViewController: UIViewController {
         menuView.animationDuration = 0.5
         menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.3
+        menuView.checkMarkImage = UIImage(named: "7")
+        
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> Void in
             print("Did select item at index: \(indexPath)")
             self.selectedCellLabel.text = items[indexPath]
