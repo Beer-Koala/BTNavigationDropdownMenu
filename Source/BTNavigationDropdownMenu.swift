@@ -219,6 +219,15 @@ open class BTNavigationDropdownMenu: UIView {
             self.configuration.shouldChangeTitleText = value
         }
     }
+    
+    open var cellSeparatorStyle: UITableViewCellSeparatorStyle! {
+        get {
+            return self.configuration.cellSeparatorStyle
+        }
+        set(value) {
+            self.configuration.cellSeparatorStyle = value
+        }
+    }
 
     open var didSelectItemAtIndexHandler: ((_ indexPath: Int) -> ())?
     open var isShown: Bool!
